@@ -1,0 +1,46 @@
+{% load static from staticfiles %}
+<html>
+<head>
+	<title>{%block title%}wPolonica {%endblock%} {%block subtitle%}miejsca{%endblock%}  </title>
+	{%block meta%}
+
+	{%endblock%}
+	{%block addmeta%}
+
+	{%endblock%}
+	{%block css%}
+		<link rel="stylesheet" type="text/css" href="{% static "css/reset.css" %}" />
+		<link rel="stylesheet" type="text/css" href="{% static "css/main.css"%}" />
+	{%endblock%}
+	{%block addcss%}
+
+	{%endblock%}
+	{%block js%}
+		<script type="text/javascript" src="{% static "js/jQuery.js" %}" ></script>
+	{%endblock%}
+	
+	{%block addjs%}
+
+	{%endblock%}
+</head>
+<body>
+{%block body%}
+	<div class="topsite" id="topsite">
+	</div>
+	<div class="middlesite" id="middlesite">
+		<div class="leftsite" id="leftsite"></div>
+		<div class="contersite" id="contersite">
+			<div class="main_header"></div>
+			{%if MESSAGE%}<div class="message" id="main_message"></div>{%endif%}
+			<div class="content" id="main_content">
+				{%block content%}{%endblock%}
+			</div>
+		</div>
+		<div class="rightsite" id="rightsite"></div>
+	</div>
+	<div class="bottomsite" id="bottomsite">
+	</div>
+{%endblock%}
+</body>
+
+</html>

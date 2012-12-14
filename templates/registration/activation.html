@@ -1,0 +1,8 @@
+{%extends 'registration/main.html' %}
+{% load i18n %}
+{%block content%}
+<div>
+{%trans "Activated" %}
+<a href="{{success_url}}" >{% trans "return" %}</a>
+</div>
+{%endblock%}
