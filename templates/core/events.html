@@ -1,0 +1,12 @@
+{%extends 'main.html'%}
+{%block content%}
+<div class="events static">
+{%for item in list%}
+	<div class="item">
+		<div class="author"><a href="/user,{{item.user.id}}.html" >{%if item.user == user%}You{%else%}{{item.user}}{%endif%}</a></div>
+		<div class="description"><a href="{{item.url}}">{{item.description}}</a></div>
+		<div class="date">{{item.time}}</div>
+	</div>
+{%endfor%}
+</div>
+{%endblock%}

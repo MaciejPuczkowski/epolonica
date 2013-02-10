@@ -1,0 +1,34 @@
+{% load static from staticfiles %}
+<html>
+<head>
+	<title>{%block title%}ePolonica {%endblock%} {%block subtitle%}miejsca{%endblock%}  </title>
+	{%block meta%}
+
+	{%endblock%}
+	{%block addmeta%}
+
+	{%endblock%}
+	{%block css%}
+		<link rel="stylesheet" type="text/css" href="{% static "css/reset.css" %}" />
+		<link rel="stylesheet" type="text/css" href="{% static "css/main.css"%}" />
+		<link rel="stylesheet" type="text/css" href="{% static "css/places.css"%}" />
+	{%endblock%}
+	{%block addcss%}
+
+	{%endblock%}
+	{%block js%}
+		<script type="text/javascript" src="{% static "js/jQuery1.8.js" %}" ></script>
+		<script type="text/javascript" src="{% static "js/silent.js" %}" ></script>
+	{%endblock%}
+	
+	{%block addjs%}
+
+	{%endblock%}
+</head>
+<body>
+{%block body%}
+	
+{%endblock%}
+</body>
+
+</html>

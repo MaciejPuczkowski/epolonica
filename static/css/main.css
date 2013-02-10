@@ -1,0 +1,355 @@
+
+body{
+	font-family:  Arial;
+}
+#logo{
+	background-color: #440000;
+	width: 170px;
+	height: 36px;
+	position: relative;
+	margin-top: 6px;
+	float: right;
+}
+#logo a{
+	position:absolute;
+	z-index:100;
+	display: block;
+	width:100%;
+	height: 100%;
+}
+
+.topsite{
+	margin : 0;
+	background-color: #eeeeee;
+	width:100%;
+	height:50px;
+}
+.leftsite, .topleftsite{
+	margin-left:0;
+	float:left;
+	width: 300px;
+	min-height:80%;
+}
+.centersite, .topcentersite{
+	float:left;
+	width:900px;
+	margin-left:auto;
+	margin-right:auto;
+	left:auto;
+	right:auto;
+	
+}
+.centersite.short, .topcentersite{
+	width:620px;
+	
+}
+.centersite.short{
+	background-color: #fafafa;
+}
+.centersite.out, .centersite.short.out{
+	width: 900px;
+	background-color: #fafafa;
+}
+.topcentersite{
+	height:100%;
+}
+.rightsite{
+	border-width:0;
+	border-left-width: 1px;
+	border-color: #eee;
+	border-style:solid;
+	min-height: 100%;
+}
+.toprightsite a{
+	float:right;
+	display: block;
+	width: 280px;
+	text-align: right;
+}
+.toprightsite{
+	width: 280px;
+}
+.rightsite, .toprightsite{
+	margin-right:0;
+	float:left;
+	width:280px;
+}
+.leftsite{
+	border-width: 0;
+	border-right-width:2px;
+	border-color:#eee;
+	border-style: solid;
+}
+.content{
+	margin:2px;
+}
+.leftsite ul{
+	margin-right: 5px;
+	float:right;
+}
+.leftsite ul li a, .leftsite ul li a:VISITED {
+	text-decoration: none;
+	font-weight: bold;
+	color: #666666;
+	font-size: small;
+	text-transform: uppercase;
+}
+
+.leftsite ul li a:hover{
+	border-width:0;
+	border-bottom-width: 2px;
+	border-style: solid;
+	border-color: #333333;
+	color: #333333;
+}
+.leftsite ul li{
+	margin-top:20px;
+	float:right;
+	clear:both;
+}
+
+.clearer{
+	clear:both;
+}
+.translations a, .translations img{
+	display: block;
+	width:100%;
+	height:100%;
+	position: absolute;
+}
+.translations a{
+	z-index:100;
+}
+.translations li{
+	position:relative;
+	float: left;
+	width:30px;
+	height:20px;
+}
+form {
+	margin-left: 10px;
+	width: 620px;
+	
+}
+form p, form label{
+	width:100%;
+}
+form label {
+	display:block;
+	margin-top: 10px;
+	
+}
+form textarea {
+	width: 620px;
+	border-width:1px;
+	border-color: #aaa;
+	border-radius: 0px 0px 3px 3px;
+	border-style:solid;
+	font-family:Arial;
+}
+form input[type="text"]{
+	width: 400px;
+	line-height: 1.5;
+	border-width:1px;
+	border-top-width: 0px;
+	border-color: #aaa;
+	border-radius: 0px 0px 3px 3px;
+	border-style:solid;
+}
+form.login{
+	width: 250px;
+}
+form.login input[type="text"], form.login input[type="password"]{
+	width: 180px;
+	border-width:1px;
+	float:left;
+	line-height: 1;
+	border-top-width: 0px;
+	border-color: #aaa;
+	border-radius: 0px 0px 3px 3px;
+	border-style:solid;
+}
+form.login input[type="submit"]{
+	float:left;
+}
+form.login a{
+	width:30px;
+	float:left;
+	text-align: left;
+	line-height: 1.7;
+}
+
+.errorlist li{
+	color: #aa0000;
+	font-size: 14px;
+}
+.rightsite .events .item{
+	width: 265px;
+	margin-left:5px;
+	margin-top:5px;
+	padding:5px;
+	background-color: #fafafa;
+	font-size:14px;
+}
+.rightsite .events .item .date{
+	font-size:12px;
+}
+.rightsite .events .item .author{
+	float:left;
+	margin-right:3px;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+.rightsite .events {
+	max-height: 100%;
+	overflow-y: hidden;
+	
+}
+.static.events .item{
+	margin-left:5px;
+	margin-top:5px;
+	padding:5px;
+	background-color: #fafafa;
+	width: 620px;	
+	font-size:16px;
+	line-height: 2;
+}
+.static.events .item .date{
+	font-size:14px;
+}
+.static.events .item .author{
+	float:left;
+	margin-right:5px;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+.leftsite .login_panel form{
+	width: 182px;
+	float:right;
+}
+.leftsite .login_panel form.login input{
+	border-top-width: 1px;
+	border-radius: 4px;
+}
+ul.simple{
+	
+	
+	width: 600px;
+	background-color:#fafafa;
+	padding:10px;
+}
+ul.simple li{
+	margin-bottom:5px;
+}
+.user_item{
+	width:600px;
+	padding:10px;
+	background-color: #eeeeee;
+	margin-top:10px;
+}
+.user_item .mail{
+
+	float:right;
+}
+
+.mailbox li {
+	width: 600px;
+	margin-left:10px;
+	clear:both;
+	margin-top:10px;	
+}
+.mailbox li .head{
+	padding:5px;
+	width:100%;
+	font-size:14px;
+	background-color: #f0f0f0;
+	height: 20px;
+}
+.mailbox li .title{
+	width:600px;
+	background-color: #ffffff;
+	padding: 5px;
+	display:block;
+}
+.mailbox li .author{
+	float:left;
+}
+.mailbox li .date{
+	float:right;
+}
+form.message{
+	margin-top:20px;
+}
+form.message, form.message textarea{
+	width:500px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+form.message  label{
+	display:none;
+}
+
+.message .date {
+	font-size:12px;
+	float:right;
+}
+.responses .date{
+	font-size:12px;
+	width:600px;
+}
+.message .author{
+	float:left;
+	font-size: 12px;
+}
+.responses .author{
+	float:left;
+	margin-right:3px;
+}
+.message .title{
+	width:600px;
+	border-width:0;
+	border-top-width:2px;
+	border-bottom-width:2px;
+	border-color: #eee;
+	border-style: solid;
+	font-size: 16px;
+	font-weight: bold;
+	clear:both;
+	padding:5px;
+	
+}
+.message .users li{
+	float:left;
+	margin-right: 3px;
+	
+}
+.message .users{
+	font-size:12px;
+	margin-bottom:5px;
+	width:600px;
+	min-height:15px;
+}
+.respond{
+	width:600px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px;
+	border-width:0;
+	border-top-width:2px;
+	
+	border-color: #eee;
+	border-style: solid;
+}
+.respond .text{
+	background-color:#fff;
+	padding:5px;
+}
+.personal_data .nickname, .personal_data .last_name, .personal_data .first_name{
+	font-size:18px;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+.address li{
+	margin-bottom:5px;
+}

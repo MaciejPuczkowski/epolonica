@@ -1,0 +1,7 @@
+
+{%block content%}
+<form class="enter" method="POST" {%if action%}action="{{action}}"{%endif%}>{% csrf_token %}
+{{form}}
+{{captcha}}
+</form>
+{%endblock%}

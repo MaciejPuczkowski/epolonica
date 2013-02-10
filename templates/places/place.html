@@ -1,0 +1,91 @@
+{%extends 'main.html'%}
+{% load static from staticfiles %}
+{%block content%}
+<div class="place_detail">
+	<div class="place_head">
+		<div class="title">{{place.title}}</div>
+		<div class="translations">
+			<h3>Available languages:</h3>
+			<ul >
+			{%for t in translations%}
+				<li><a href="/places/{{t.title}},{{t.language.short}},{{place.id}}.html"></a><img src="{{MEDIA_URL}}{{t.language.icon}}" /></li>
+			{%endfor%}
+			</ul>
+		</div>
+		<div class="lead">{{place.lead}}</div>
+		<div class="data">
+			<div class="date">
+				<div class="publish_date">Published: {{place.publishDate}}</div>
+				<div class="modified_date">Modified: {{place.lastModifiedDate}}</div>
+			</div>
+			<div class="visited">Visited: {{place.visited}}</div>
+			<div class="rank"><div>Rank: {{place.rank}}</div>{%if user %} <a class="quiet" href="/vote/{{place.id}}">{%if like %}Unlike{%else%}Like{%endif%}</a> {%endif%} </div>
+			<div class="observe"><a class="quiet" href="/observe/content,{{place.id}}/" >{%if observed%}Stop observing{%else%}Observe{%endif%}</a></div>
+			<div class="author"><h3>Author:</h3>{{place.author}}</div>
+			
+			<div class="panel">
+			{%if user %}
+				
+				<a href="/places/{{place.id}}/add_article.html">Add article</a>
+				{%if not translated%}
+				<a href="/places/{{place.id}}/add_photo.html"">Add photo</a>
+				<a href="/places/translate/{{place.id}}.html?next=/places/{{place.title}},{{place.id}}.html">Translate</a>
+				{%endif%}
+				{%if user == place.author%}
+				<a href="/places/edit,{{place.id}}.html" >Edit</a>
+				{%endif%}
+				<a href="/report/content,{{place.id}}.html" >Report</a>
+			{%endif%}
+				
+			</div>
+			
+		</div>
+		
+		{%if user%}
+		<div class="comments_box">
+			<a class="replacement see_comments" href="/comment/{{place.id}}" >See comments </a>
+		</div>
+		{%endif%}
+	</div>
+	<div class="place_gallery" >
+		{% for photo in gallery%}
+		<div class="photo">
+			
+			<img src="{{MEDIA_URL}}{{photo.image}}" alt="main_photo"  width="200px" height="150px" />
+			{%if user == photo.author %}
+			<div class="edit"><a href="/places/edit/photo,{{photo.id}}.html" >edit</a></div>
+			{%endif%}
+			<div class="title">{{photo.title}}</div>
+			
+		</div>
+		{%endfor%}
+		
+	</div>
+	<div class="articles">
+		{%for article in articles%}
+			<div class="article">
+				<div class="title">{{article.title}}</div>
+				{%if user == article.author %}
+				
+				<div class="edit"><a href="/places/edit/article,{{article.id}}.html" >Edit</a></div>
+				{%endif%}
+				
+				<div class="content">{{article.content}}</div>
+				<div class="foot">
+					<div class="author">Author:<a href="/user,{{article.author.id}}.html"> {{article.author}}</a></div>
+					<div class="date">
+						<div class="publish_date">Published: {{article.datePublish}}</div>
+						<div class="modified_date">Modified: {{article.lastModifiedDate}}</div>
+					</div>
+				</div>
+				{%if user%}
+				<div class="comments_box">
+					<a class="replacement see_comments" href="/comment/{{article.id}}" >See comments </a>
+				</div>
+				{%endif%}
+			</div>
+		{%endfor%}	
+	</div>
+
+</div>
+{%endblock%}

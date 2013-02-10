@@ -1,0 +1,38 @@
+{%extends 'main.html'%}
+{%block content%}
+<div class="message">
+	
+	
+	
+	<div class="author">Author:&nbsp;<a href="/user,{{msg.author.id}}.html">{{msg.author}}</div>
+	<div class="date">{{msg.date}}</div>
+	<div class="title">{{msg.title}}</div>
+	<div class="users">
+		<ul>
+			<li>Users:</li>
+			{%for user in msg.users.all%}
+				{%if user != msg.author%}
+					<li><a href="">{{user.username}}</a> </li>
+				{%endif%}
+			{%endfor%}
+		</ul>
+	</div>
+	<div class="text">{{msg.text}}</div>
+</div>
+<div class="responses">
+	{%for respond in responses %}
+		<div class="respond">
+			<div class="date">{{respond.date}}</div>
+			<div class="author"><a href="/user,{{respond.author.id}}.html">{{respond.author}}</a>:&nbsp</div>
+			
+			<div class="text">
+				{{respond.text}}
+			</div>
+		</div>
+	{%endfor%}
+</div>
+<form class="enter message" action="/mailbox/respond,{{msg.id}}.html" method="POST">{%csrf_token%}
+	{{form}}
+	
+</form>
+{%endblock%}

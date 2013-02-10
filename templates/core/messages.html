@@ -1,0 +1,18 @@
+{%extends 'main.html'%}
+{%block content%}
+<div class="mailbox">
+	<a href="/mailbox/send.html">New message</a>
+	<ul>
+	{%for item in list%}
+		<li>
+			<div class="head">
+			<a class="author" href="/user,{{item.author.id}}.html">From:&nbsp; {{item.author}}</a>
+			<div class="date" >{{item.date}}</div>
+			</div>
+			<a class="title" href="/mailbox/message,{{item.id}}.html">{{item.title}}</a>
+		</li>
+		<li class="clearer"></li>
+	{%endfor%}
+	</ul>
+</div>
+{%endblock%}

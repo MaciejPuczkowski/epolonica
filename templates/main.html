@@ -1,46 +1,75 @@
+{%extends 'header.html'%}
 {% load static from staticfiles %}
-<html>
-<head>
-	<title>{%block title%}wPolonica {%endblock%} {%block subtitle%}miejsca{%endblock%}  </title>
-	{%block meta%}
-
-	{%endblock%}
-	{%block addmeta%}
-
-	{%endblock%}
-	{%block css%}
-		<link rel="stylesheet" type="text/css" href="{% static "css/reset.css" %}" />
-		<link rel="stylesheet" type="text/css" href="{% static "css/main.css"%}" />
-	{%endblock%}
-	{%block addcss%}
-
-	{%endblock%}
-	{%block js%}
-		<script type="text/javascript" src="{% static "js/jQuery.js" %}" ></script>
-	{%endblock%}
-	
-	{%block addjs%}
-
-	{%endblock%}
-</head>
-<body>
 {%block body%}
 	<div class="topsite" id="topsite">
+		<div class="topleftsite">
+			<div id="logo">
+				<a href="/"></a>
+				<img alt="logo" src="{% static "img/logo.png"%}" />
+			</div>
+		</div>
+		<div class="topcentersite">
+			<form class="enter" method="POST" action="/search/contents.html">{% csrf_token %}
+				<input type="text" name="line" value="search" />
+			</form>
+		</div>
+		<div class="toprightsite">
+			<div class="login_panel">
+				{%if user.username %}
+				<a href="/logout.html">Log out </a>
+				<a href="/report/error.html">Report error</a>
+				
+				
+				{%endif%}
+			</div>
+		</div>
 	</div>
 	<div class="middlesite" id="middlesite">
-		<div class="leftsite" id="leftsite"></div>
-		<div class="contersite" id="contersite">
+		<div class="leftsite" id="leftsite">
+			{%if user.username%}
+			<ul>
+				<li><a href="/profile.html">User Panel</a></li>
+				<li><a href="/places/add.html">Add place</a></li>
+				<li><a href="/history.html">History</a></li>
+				<li><a href="/events.html">Events</a></li>
+				<li><a href="/observing/users.html">Observers</a></li>
+				<li><a href="/observed/users.html">Observed users</a></li>
+				<li><a href="/places/observed.html">Observed contents</a></li>
+				<li><a href="/mailbox/list.html">Mailbox</a></li>
+				<li><a href="/places/published.html">Publications</a></li>
+			</ul>
+			{%else%}
+			<div class="login_panel">
+				<form class="login enter" action="/login.html" method="POST">{% csrf_token %}
+					<input type="text" name="username" />
+					<input type="password" name="password" />
+					<input type="submit" value="Log in" />
+					<a href="/register.html">Register </a>
+				</form>
+			</div>
+			{%endif%}
+		</div>
+		<div class="centersite {%if short %}short{%endif%} {%if not user.username%} out{%endif%} " id="centersite">
 			<div class="main_header"></div>
 			{%if MESSAGE%}<div class="message" id="main_message"></div>{%endif%}
 			<div class="content" id="main_content">
-				{%block content%}{%endblock%}
+				{%block content%}
+				
+				{%endblock%}
 			</div>
 		</div>
-		<div class="rightsite" id="rightsite"></div>
+		{%if short%}
+		<div class="rightsite" id="rightsite">
+			{%block rightsite%}
+			{%if user.username %}
+			<div class="events">
+			<a class="joiner"  href="/0,events.html" ></a>
+			</div>
+			{%endif%}
+			{%endblock%}
+		</div>
+		{%endif%}
 	</div>
 	<div class="bottomsite" id="bottomsite">
 	</div>
 {%endblock%}
-</body>
-
-</html>

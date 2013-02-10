@@ -1,0 +1,19 @@
+{%extends 'main.html'%}
+{% load static from staticfiles %}
+{%block content%}
+<div class="userlist">
+{%for item in list%}
+<div class="user_item">
+	<a href="/user,{{item.id}}.html" >
+		{%if item.first_name and item.last_name %}
+		{{item.first_name}}&nbsp;{{item.last_name}}
+		{%else%}
+		{{item}}
+		{%endif%}
+	</a>
+	<div class="mail">{{item.email}}</div>
+</div>
+
+{%endfor%}
+</div>
+{%endblock%}

@@ -1,0 +1,31 @@
+{%extends 'main.html'%}
+{%block content%}
+<div class="places_list {%if not user.username%}out{%endif%}">
+{%for item in list%}
+	<div class="places_item">
+		<div class="description">
+			<div class="head">
+				<a href="/places/place,{{item.title}},{{item.id}}.html" >{{item.title}}</a>
+			</div>
+			<div class="middle">
+			{%if item.gallery_photo.all.0.image%}
+				<div class="photo">
+					<a href="/places/place,{{item.title}},{{item.id}}.html"></a>
+					<img src="{{MEDIA_URL}}{{item.gallery_photo.all.0.image}}" alt="{{item.title}}" width="200px" height="150px" />
+				</div>
+			{%endif%}
+			
+				<div class="lead">
+					{{item.lead}}
+				</div>
+			</div>
+			<div class="foot">
+				<div class="date">Date: {{item.lastModifiedDate}}</div>
+				<div class="author"><div style="float:left;">Author:</div> <a href="/user,{{item.author.id}}.html">{{item.author}}</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="clearer"></div>
+{%endfor%}
+</div>
+{%endblock%}

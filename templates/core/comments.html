@@ -1,0 +1,13 @@
+<div class="comments">
+<div style="display:none" class="comid">{{id}}</div>
+{%for comment in comments%}
+<div class="comment">
+	<div class="author"><a href="/user,{{comment.author.id}}.html">{{comment.author}}</a></div>
+	<div class="text">{{comment.text}}</div> 
+	<div class="date" >{{comment.date}}</div>
+</div>
+{%endfor%}
+</div>
+<form class="comment" action="/comment/{{id}}" method="POST" >{%csrf_token%}
+	{{form}}
+</form>

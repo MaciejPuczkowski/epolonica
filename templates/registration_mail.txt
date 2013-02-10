@@ -1,0 +1,8 @@
+Hi {{user.first_name}}.
+Thank you for your registration in ePolonica.
+
+Here is your activation url. 
+
+{{activation_url}}
+You must activate you account during: {{respiration_time}}
+Later it may be difficult.

@@ -1,0 +1,8 @@
+{%if title%}
+<h3>{{title}}:</h3>
+{%endif%}
+<ul class="simple" >
+{%for item in list%}
+	<li><a href="{{item.1}}">{{item.0}}</a></li>
+{%endfor%}
+</ul>

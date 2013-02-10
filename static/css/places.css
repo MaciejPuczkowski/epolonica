@@ -1,0 +1,257 @@
+.places_list{
+	width:620px;
+}
+
+.places_item{
+	width: 620px;
+	margin-left:auto;
+	margin-width:auto;
+	
+	margin-bottom:10px;
+	clear:both;
+	
+	
+}
+
+
+.places_item .photo{
+	float:left;
+	position:relative;
+	margin-top:2px;
+}
+.places_item .photo a{
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+.places_item .photo img{
+
+}
+.places_item .head{
+	width: 100%;
+	border-width:0px;
+	border-bottom-width: 2px;
+	border-color: #eeeeee;
+	border-style: solid;
+
+}
+.places_item .description a, .places_item .description a:visited{
+	text-decoration: none;
+	
+	
+}
+
+.places_item .description{
+	
+	width: 590px;
+	margin-left:auto;
+	margin-right:auto;
+	border-width:0px;
+	border-bottom-width:2px;
+	border-color: #dddddd;
+	border-style:solid;
+}
+.places_item .head{
+	height: 28px;
+}
+.places_item .middle{
+	width: 100%;
+	/*height: 150px*/
+}
+.places_item .middle .lead{ 
+	margin: 2px ; 
+	/*float:left;*/ 
+	color: #535353;
+	font-size: 14px;
+	
+	overflow: hidden;
+	 
+}
+.places_item .middle .info{
+	width:385px;
+	height:15px;
+}
+.places_item .middle .visited,.places_item .middle .rank{ float:left ; }
+
+.places_item .foot{
+	height: 19px;
+	margin-bottom: 0px;
+	bottom: 0px;
+	font-size: x-small;
+	border-top-width:1px;
+	border-bottom-width: 0px;
+	border-color: #eeeeee;
+	border-style: solid;
+	clear:both;
+	
+}
+.places_item .foot *{
+	float: right;
+	margin-left:3px;
+}
+.places_item .foot .author{
+	float:left;
+}
+.places_item .head a{
+	
+	font-color: #ff2222;
+	font-size:x-large;
+	text-decoration: none;
+	
+}
+
+.place_detail .articles{
+	width:660px;
+}
+.place_detail .article{
+	margin-top:20px;
+	margin-bottom:20px;
+	clear:both;
+}
+.place_detail .article .title{
+	font-size: 18px;
+	font-weight: bold;
+	background-color:#fefefe; 
+	border-bottom-width:1px;
+	border-color: #eeeeee;
+	border-style: solid;
+}
+.place_gallery{
+	float:right;
+	width: 200px;
+}
+.place_head, .place_detail .articles{
+	width:660px;
+	float:left;
+	text-align: justify;
+	line-height: 1.25;
+	margin-left:16px;
+	margin-right:auto;
+}
+.place_head .title{
+	font-size: 20px;
+	font-weight: bold;
+	
+}
+.place_detail .article .foot, .place_detail .data{
+	width:660px;
+	font-size: 12px;
+	border-color:#eeeeee ;
+	border-top-width: 1px;
+	border-style: solid;
+	
+}
+.place_detail .article .foot{
+	height: 30px;
+	border-bottom-width: 1px;
+}
+.place_detail  .date {
+	float: right;
+	width: 200px;
+}
+.place_detail .article .foot .author{
+	float: left;
+	width: 200px;
+}
+.place_detail .comment_button{
+	float: left;
+}
+.comments_box{
+	display: relative;
+	
+}
+.place_detail .place_head .lead{
+	margin-top: 3px;
+}
+.place_detail .translations{
+	width:100%;
+	height: 20px;
+	border-width: 0;
+	border-bottom-width:2px;
+	border-color: #eee;
+	border-style: solid;
+}
+.place_detail .place_head .panel{
+	width:100%;
+	height: 30px;
+}
+.edit a{
+	font-size: 12px;
+}
+.place_detail .place_head .panel a{
+	display: block;
+	padding: 5px;
+	width: 69px;
+	background-color: #642a2a;
+	margin-right: 4px;
+	color:#fff;
+	float: left;
+	text-align: center;
+	border-radius: 3px;
+}
+.place_detail .rank div{
+	float:left;
+	margin-right: 3px;
+}
+.place_detail  h3{
+	float:left;
+	margin-right: 3px;
+}
+.place_detail .photo{
+	font-size:12px;
+	background-color:#fafafa;
+	margin-bottom: 10px;
+}
+.places_list.out, .places_list.out .places_item, .places_list.out .description {
+	width:900px;
+}
+.places_list.out .lead{
+	padding-left:5px;
+	width: 680px;
+}
+.comments_box .comments{
+	width: 80%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:6px;
+	margin-bottom: 6px;
+	background-color: #eee;
+}
+.comments_box .comment{
+	border-width: 0;
+	border-color: #fff;
+	border-bottom-width:1px;
+	border-style: inset;
+	font-size: 13px;
+	padding: 3px;
+}
+
+form.comment label{
+	display :none;
+}
+.comments_box form.comment {
+	
+	width: 80%;
+	margin-left:auto;
+	margin-right:auto;
+	height: 100px;
+	
+}
+.comment .author{
+	float:left;
+	margin-right: 3px;
+	marigin-left: 3px;
+	text-transform: capitalize;
+}
+.comment .date{
+	width:100%;
+	float: none;
+	font-size: 10px;
+}
+.comments_box form.comment textarea{
+	width : 100%;
+	height: 100%;
+}
+.see_comments {
+	font-size: 12px;
+}
