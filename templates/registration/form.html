@@ -1,8 +1,0 @@
-{%extends 'registration/main.html'%}
-{%block content%}
-<form method="POST" >{% csrf_token %}
-{{form}}
-{{captcha}}
-<input type="submit"  />
-</form>
-{%endblock%}
